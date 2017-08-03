@@ -1,0 +1,33 @@
+{
+  "session": {
+    "sessionId": "SessionId.425d83e5-b743-4024-8fd1-16304788ca91",
+    "application": {
+      "applicationId": "amzn1.ask.skill.529dbafa-a336-4ebe-8e6a-81d4b4518bd3"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AECQ5JCHGAKVD5G3AV53WU546VIUOQPTKAIWBGTD3S5UVGUWNKR3YFHNYGXWEK4GWM27YQSRFRMQRKMFY74JQYH3KQBZS47PJT2YW6PMEDR5YVJGAFIFQO2C2WSKCS5JG52JSCMIEKLPDXOQTIW2B56IADYUGSZ4OFQNW22PMMNPT3RTTSYLVFQ5RCMY4GYEYSCGOYKYX4GR2JA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.1a2a5c36-2c52-4efd-855f-0e26685afa90",
+    "locale": "en-US",
+    "timestamp": "2017-07-25T02:25:20Z",
+    "intent": {
+      "name": "GetArrivalsIntent",
+      "slots": {
+        "Station": {
+          "name": "Station",
+          "value": "Brickell"
+        },
+        "TransitMode": {
+          "name": "TransitMode",
+          "value": "train"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

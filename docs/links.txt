@@ -1,0 +1,6 @@
+http://www.miamidade.gov/transit/WebServices/Transit_XML_Data_Feeds.pdf
+
+http://miami-transit-api.herokuapp.com/api/TrainStations.json
+
+http://miami-transit-api.herokuapp.com/api/TrainTracker.json?StationID=BLK
+

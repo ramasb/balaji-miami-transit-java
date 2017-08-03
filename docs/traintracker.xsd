@@ -1,0 +1,49 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="TrainTracker" type="TrainTrackerType" />
+	<xs:complexType name="InfoType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="StationName" />
+			<xs:element type="xs:string" name="StationID" />
+			<xs:element type="xs:string" name="StationAddress" />
+			<xs:element type="xs:string" name="RiderAlert" />
+			<xs:element type="xs:string" name="Facilities" />
+			<xs:element type="xs:string" name="NB_Time1" />
+			<xs:element type="xs:short" name="NB_Time1_Est" />
+			<xs:element type="xs:string" name="NB_Time1_Arrival" />
+			<xs:element type="xs:byte" name="NB_Time1_Train" />
+			<xs:element type="xs:string" name="NB_Time1_LineID" />
+			<xs:element type="xs:string" name="NB_Time2" />
+			<xs:element type="xs:short" name="NB_Time2_Est" />
+			<xs:element type="xs:string" name="NB_Time2_Arrival" />
+			<xs:element type="xs:string" name="NB_Time2_Train" />
+			<xs:element type="xs:string" name="NB_Time2_LineID" />
+			<xs:element type="xs:string" name="NB_Time3" />
+			<xs:element type="xs:short" name="NB_Time3_Est" />
+			<xs:element type="xs:string" name="NB_Time3_Arrival" />
+			<xs:element type="xs:string" name="NB_Time3_Train" />
+			<xs:element type="xs:string" name="NB_Time3_LineID" />
+			<xs:element type="xs:string" name="SB_Time1" />
+			<xs:element type="xs:short" name="SB_Time1_Est" />
+			<xs:element type="xs:string" name="SB_Time1_Arrival" />
+			<xs:element type="xs:byte" name="SB_Time1_Train" />
+			<xs:element type="xs:string" name="SB_Time1_LineID" />
+			<xs:element type="xs:string" name="SB_Time2" />
+			<xs:element type="xs:short" name="SB_Time2_Est" />
+			<xs:element type="xs:string" name="SB_Time2_Arrival" />
+			<xs:element type="xs:byte" name="SB_Time2_Train" />
+			<xs:element type="xs:string" name="SB_Time2_LineID" />
+			<xs:element type="xs:string" name="SB_Time3" />
+			<xs:element type="xs:short" name="SB_Time3_Est" />
+			<xs:element type="xs:string" name="SB_Time3_Arrival" />
+			<xs:element type="xs:byte" name="SB_Time3_Train" />
+			<xs:element type="xs:string" name="SB_Time3_LineID" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TrainTrackerType">
+		<xs:sequence>
+			<xs:element type="InfoType" name="Info" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
+

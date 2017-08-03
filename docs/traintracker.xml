@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TrainTracker>
+	<Info>
+		<StationName>Brickell</StationName>
+		<StationID>BLK</StationID>
+		<StationAddress>1001 SW First Avenue</StationAddress>
+		<RiderAlert />
+		<Facilities />
+		<NB_Time1>9:18 min</NB_Time1>
+		<NB_Time1_Est>558</NB_Time1_Est>
+		<NB_Time1_Arrival>12:01 PM</NB_Time1_Arrival>
+		<NB_Time1_Train>109</NB_Time1_Train>
+		<NB_Time1_LineID>ORG</NB_Time1_LineID>
+		<NB_Time2>24:59 min</NB_Time2>
+		<NB_Time2_Est>1499</NB_Time2_Est>
+		<NB_Time2_Arrival>12:17 PM</NB_Time2_Arrival>
+		<NB_Time2_Train>SCH</NB_Time2_Train>
+		<NB_Time2_LineID>GRN</NB_Time2_LineID>
+		<NB_Time3>39:59 min</NB_Time3>
+		<NB_Time3_Est>2399</NB_Time3_Est>
+		<NB_Time3_Arrival>12:32 PM</NB_Time3_Arrival>
+		<NB_Time3_Train>SCH</NB_Time3_Train>
+		<NB_Time3_LineID>ORG</NB_Time3_LineID>
+		<SB_Time1>3:11 min</SB_Time1>
+		<SB_Time1_Est>191</SB_Time1_Est>
+		<SB_Time1_Arrival>11:55 AM</SB_Time1_Arrival>
+		<SB_Time1_Train>114</SB_Time1_Train>
+		<SB_Time1_LineID>GRN</SB_Time1_LineID>
+		<SB_Time2>13:38 min</SB_Time2>
+		<SB_Time2_Est>818</SB_Time2_Est>
+		<SB_Time2_Arrival>12:06 PM</SB_Time2_Arrival>
+		<SB_Time2_Train>102</SB_Time2_Train>
+		<SB_Time2_LineID>OUT</SB_Time2_LineID>
+		<SB_Time3>18:58 min</SB_Time3>
+		<SB_Time3_Est>1138</SB_Time3_Est>
+		<SB_Time3_Arrival>12:11 PM</SB_Time3_Arrival>
+		<SB_Time3_Train>116</SB_Time3_Train>
+		<SB_Time3_LineID>OUT</SB_Time3_LineID>
+	</Info>
+</TrainTracker>

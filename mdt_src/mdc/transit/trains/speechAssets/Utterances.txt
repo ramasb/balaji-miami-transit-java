@@ -1,0 +1,51 @@
+GetArrivalsIntent where is the {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent when is the {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent when does the {Train|TransitMode} get at {Brickell|Station}
+GetArrivalsIntent when does my {Train|TransitMode} get at {Brickell|Station}
+GetArrivalsIntent when does my {Train|TransitMode} arrive at {Brickell|Station}
+GetArrivalsIntent when will my {Train|TransitMode} arrive at {Brickell|Station}
+GetArrivalsIntent what time will {Train|TransitMode} arrive at {Brickell|Station}
+GetArrivalsIntent when does the {Train|TransitMode} arrive at {Brickell|Station}
+GetArrivalsIntent when is my {Train|TransitMode} arriving at {Brickell|Station}
+GetArrivalsIntent when is the {Train|TransitMode} arriving at {Brickell|Station}
+GetArrivalsIntent when is the {Train|TransitMode} coming at {Brickell|Station}
+GetArrivalsIntent when is the {Train|TransitMode} approaching at {Brickell|Station}
+GetArrivalsIntent when is my {Train|TransitMode} coming at {Brickell|Station}
+GetArrivalsIntent when is my {Train|TransitMode} approaching at {Brickell|Station}
+GetArrivalsIntent what time does the {Train|TransitMode} get to {Brickell|Station}
+GetArrivalsIntent what time does my {Train|TransitMode} get to {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} coming at {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} approaching {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} arriving {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent what time is my {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent what time is the {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent what time does my {Train|TransitMode} arrive at {Brickell|Station}
+GetArrivalsIntent what time does the {Train|TransitMode} arrive at {Brickell|Station}
+GetArrivalsIntent how far away is the {Train|TransitMode} at {Brickell|Station}
+GetArrivalsIntent how long until the {Train|TransitMode} arrives at {Brickell|Station}
+GetArrivalsIntent when does my {Train|TransitMode} depart from {Brickell|Station}
+GetArrivalsIntent when does the {Train|TransitMode} depart from {Brickell|Station}
+GetArrivalsIntent when is my {Train|TransitMode} departing from {Brickell|Station}
+GetArrivalsIntent when is the {Train|TransitMode} departing from {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} departing from {Brickell|Station}
+GetArrivalsIntent what time does my {Train|TransitMode} depart from {Brickell|Station}
+GetArrivalsIntent when will my {Train|TransitMode} depart from {Brickell|Station}
+GetArrivalsIntent what time will my {Train|TransitMode} depart from {Brickell|Station}
+GetArrivalsIntent what time does the {Train|TransitMode} depart from {Brickell|Station}
+GetArrivalsIntent how long until the {Train|TransitMode} departs from {Brickell|Station}
+GetArrivalsIntent when does my {Train|TransitMode} leave from {Brickell|Station}
+GetArrivalsIntent when does the {Train|TransitMode} leave from {Brickell|Station}
+GetArrivalsIntent when will my {Train|TransitMode} leave from {Brickell|Station}
+GetArrivalsIntent what time will my {Train|TransitMode} leave from {Brickell|Station}
+GetArrivalsIntent when is my {Train|TransitMode} leaving from {Brickell|Station}
+GetArrivalsIntent when is the {Train|TransitMode} leaving from {Brickell|Station}
+GetArrivalsIntent when is the next {Train|TransitMode} leaving from {Brickell|Station}
+GetArrivalsIntent what time does my {Train|TransitMode} leave from {Brickell|Station}
+GetArrivalsIntent what time does the {Train|TransitMode} leave from {Brickell|Station}
+GetArrivalsIntent how long until the {Train|TransitMode} leaves from {Brickell|Station}
+GetArrivalsIntent the arrival times of {Train|TransitMode} for {Brickell|Station}
+GetArrivalsIntent the departure times of my {Train|TransitMode} for {Brickell|Station}
+GetArrivalsIntent {Train|TransitMode} times for {Brickell|Station}
+GetArrivalsIntent where {Train|TransitMode} at {Brickell|Station}

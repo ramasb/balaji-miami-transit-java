@@ -1,0 +1,9 @@
+{"intents": [
+             {"intent": "GetArrivalsIntent", "slots": [{"name": "TransitMode", "type": "string"}, {"name" : "Station", "type" :"string"}]},
+             {"intent": "AMAZON.RepeatIntent"},
+             {"intent": "AMAZON.NextIntent"},
+             {"intent": "AMAZON.HelpIntent"},
+             {"intent": "AMAZON.StopIntent"},
+             {"intent": "AMAZON.CancelIntent"}
+           ]
+         }
