@@ -90,7 +90,9 @@ public class TrainSpeechlet implements Speechlet {
 			log.info("Intent : " + intentName + " - " + tr.getMessage());
 			response = getSpeechletResponse("Error", "Error", true);
 		}
-		response.setShouldEndSession(true);
+		if (!"AMAZON.HelpIntent".equals(intentName)) {
+			response.setShouldEndSession(true);
+		}
 		return response;
 	}
 
