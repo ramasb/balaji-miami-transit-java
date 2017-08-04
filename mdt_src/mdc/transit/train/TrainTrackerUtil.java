@@ -28,6 +28,24 @@ public class TrainTrackerUtil {
 	}
 
 	public TrainTrackerType retrieveTrainTracker(String stationId) throws Exception {
+		TrainTrackerType trackerType = null;
+		Client client = Client.create();
+		client.setConnectTimeout(300000);
+		client.setReadTimeout(300000);
+		Random rnd = new Random();
+		String url = STATION_URL + stationId + "&rnd=" + rnd.nextInt();
+		
+		AsyncWebResource webResource = client.asyncResource(url);
+		Future<ClientResponse> response = webResource.type("application/xml").get(ClientResponse.class);
+		if (response.get().getClientResponseStatus() == Status.OK && response.get().hasEntity()) {
+			trackerType = response.get().getEntity(TrainTrackerType.class);
+		} else {
+			log.info("Status : " + response.get().getStatus());
+		}
+		return trackerType;
+	}
+
+	public TrainTrackerType retrieveAsyTrainTracker(String stationId) throws Exception {
 		ClientConfig cc = new DefaultNonBlockingClientConfig();
 		Client client = NonBlockingClient.create(cc);
 		client.setConnectTimeout(300000);
