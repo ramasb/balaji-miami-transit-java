@@ -29,9 +29,10 @@ public class TrainTrackerUtil {
 
 	public TrainTrackerType retrieveTrainTracker(String stationId) throws Exception {
 		TrainTrackerType trackerType = null;
-		Client client = Client.create();
-		client.setConnectTimeout(300000);
-		client.setReadTimeout(300000);
+		ClientConfig cc = new DefaultNonBlockingClientConfig();
+		Client client = NonBlockingClient.create(cc);
+		client.setConnectTimeout(1000000);
+		client.setReadTimeout(1000000);
 		Random rnd = new Random();
 		String url = STATION_URL + stationId + "&rnd=" + rnd.nextInt();
 		
