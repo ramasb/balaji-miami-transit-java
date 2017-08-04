@@ -134,7 +134,7 @@ public class TrainSpeechlet implements Speechlet {
 	 */
 	private SpeechletResponse getArrivalResponse(final Intent intent, final Session session) throws Exception {
 		// Get the slots from the intent.
-		Map<String, Slot> slots = 	intent.getSlots();
+		Map<String, Slot> slots = intent.getSlots();
 		// Get the STATION slot from the list of slots.
 		Slot stationSlot = slots.get(STATION_SLOT);
 		Slot modeSlot = slots.get(MODE_SLOT);
@@ -164,29 +164,26 @@ public class TrainSpeechlet implements Speechlet {
 
 	protected SpeechletResponse getTrainResponse(String transitMode, String currentStation) throws Exception {
 
-		TrainTrackerUtil util = TrainTrackerUtil.getInstance();
+		TrainTrackerUtil util = new TrainTrackerUtil();
 		SpeechletResponse response = getPlainResponse("Start");
 		String speechText = "";
 		String repromptText = null;
 		Record record = null;
 		TrainTrackerType trackerType = null;
 		// Check for favorite STATION and create output to user.
-		log.info("Mode : " + transitMode + "| Station : " + currentStation);
 		record = retrieveRecord(currentStation);
 
 		if (record != null) {
-			log.info("Address : " + record.getAddress());
 			trackerType = util.retrieveTrainTracker(record.getStationID());
 			if (trackerType != null && trackerType.getInfo() != null) {
 				if (trackerType.getInfo().getNBTime1Arrival() != null) {
-					log.info("Tracker : " + trackerType.getInfo().getStationName());
 					speechText += String.format("Next Northbound train arrival at %s station is %s in %s. ",
 							trackerType.getInfo().getStationName(), trackerType.getInfo().getNBTime1Arrival(),
 							convertMinHrs(trackerType.getInfo().getNBTime1()));
 				}
 				if (trackerType.getInfo().getSBTime1Arrival() != null) {
 
-					speechText += String.format("Next southbound train arrival at %s stations is %s in %s. ",
+					speechText += String.format("Next southbound train arrival at %s station is %s in %s. ",
 							trackerType.getInfo().getStationName(), trackerType.getInfo().getSBTime1Arrival(),
 							convertMinHrs(trackerType.getInfo().getSBTime1()));
 				}
@@ -256,52 +253,50 @@ public class TrainSpeechlet implements Speechlet {
 
 	private SpeechletResponse getTrainResponseIndex(String transitMode, String currentStation, int index)
 			throws Exception {
-
-		TrainTrackerUtil util = TrainTrackerUtil.getInstance();
-		;
+		TrainTrackerUtil util = new TrainTrackerUtil();
 		SpeechletResponse response = null;
 		String speechText = "";
 		String repromptText = null;
 		Record record = null;
 		TrainTrackerType trackerType = null;
 		// Check for favorite STATION and create output to user.
-
+		String trainText = "%s train arrives in %s";
+		String trainDir = "";
+		String trainTime = "";
 		record = retrieveRecord(currentStation);
+		log.info("Station Name : " + currentStation);
 		if (record != null) {
+			log.info("Station ID : " + record.getStationID());
 			trackerType = util.retrieveTrainTracker(record.getStationID());
 			if (trackerType != null && trackerType.getInfo() != null) {
 				if (trackerType.getInfo().getNBTime1Arrival() != null) {
-					if (index == 1) {
-						speechText += String.format("First Northbound train arrival at %s station is %s in %s",
-								trackerType.getInfo().getStationName(), trackerType.getInfo().getNBTime1Arrival(),
-								convertMinHrs(trackerType.getInfo().getNBTime1()));
-					} else if (index == 2) {
-						speechText += String.format("Second Northbound train arrival at %s station is %s in %s",
-								trackerType.getInfo().getStationName(), trackerType.getInfo().getNBTime2Arrival(),
-								convertMinHrs(trackerType.getInfo().getNBTime2()));
-					} else if (index == 3) {
-						speechText += String.format("Third Northbound train arrival at %s station is %s in %s",
-								trackerType.getInfo().getStationName(), trackerType.getInfo().getNBTime3Arrival(),
-								convertMinHrs(trackerType.getInfo().getNBTime3()));
+					if (index == 1 && trackerType.getInfo().getNBTime1() != null) {
+						trainDir = "First Northbound";
+						trainTime = trackerType.getInfo().getNBTime1();
+					} else if (index == 2 && trackerType.getInfo().getNBTime2() != null) {
+						trainDir = "Second Northbound";
+						trainTime = trackerType.getInfo().getNBTime2();
+					} else if (index == 3 && trackerType.getInfo().getNBTime3() != null) {
+						trainDir = "Third Northbound";
+						trainTime = trackerType.getInfo().getNBTime3();
 					}
+					speechText += String.format(trainText, trainDir, convertMinHrs(trainTime));
 				}
 				if (trackerType.getInfo().getSBTime1Arrival() != null) {
 					if (speechText.length() > 0) {
 						speechText += " and ";
 					}
-					if (index == 1) {
-						speechText += String.format("First southbound train arrival at %s stations is %s in %s",
-								trackerType.getInfo().getStationName(), trackerType.getInfo().getSBTime1Arrival(),
-								convertMinHrs(trackerType.getInfo().getSBTime1()));
-					} else if (index == 2) {
-						speechText += String.format("Second southbound train arrival at %s station is %s in %s",
-								trackerType.getInfo().getStationName(), trackerType.getInfo().getSBTime2Arrival(),
-								convertMinHrs(trackerType.getInfo().getSBTime2()));
-					} else if (index == 3) {
-						speechText += String.format("Third southbound train arrival at %s station is %s in %s",
-								trackerType.getInfo().getStationName(), trackerType.getInfo().getSBTime3Arrival(),
-								convertMinHrs(trackerType.getInfo().getSBTime3()));
+					if (index == 1 && trackerType.getInfo().getSBTime1() != null) {
+						trainDir = "First southbound";
+						trainTime = trackerType.getInfo().getSBTime1();
+					} else if (index == 2 && trackerType.getInfo().getSBTime2() != null) {
+						trainDir = "Second southbound";
+						trainTime = trackerType.getInfo().getSBTime2();
+					} else if (index == 3 && trackerType.getInfo().getSBTime2() != null) {
+						trainDir = "Third southbound";
+						trainTime = trackerType.getInfo().getSBTime2();
 					}
+					speechText += String.format(trainText, trainDir, convertMinHrs(trainTime));
 				}
 				repromptText = "To get next train, tell next train. Or to exit, tell Stop or Cancel";
 			} else {
@@ -325,7 +320,9 @@ public class TrainSpeechlet implements Speechlet {
 
 	private String convertMinHrs(String arrivalTime) {
 		String time = "";
-
+		if (arrivalTime.contains("(exp)")) {
+			arrivalTime = StringUtils.replace(arrivalTime, " (exp)", "");
+		}
 		if (arrivalTime.contains("sec")) {
 			arrivalTime = StringUtils.replace(arrivalTime, " sec", "");
 			String t[] = StringUtils.split(arrivalTime, ":");
@@ -363,7 +360,7 @@ public class TrainSpeechlet implements Speechlet {
 
 	private Record retrieveRecord(String stationName) {
 		Record record = null;
-		List<Record> records = TrainTrackerUtil.getInstance().getRecords();
+		List<Record> records = StationsUtil.getInstance().getRecords();
 		if (records != null && records.size() > 0) {
 			for (Record dbRecord : records) {
 				if (dbRecord.getStation().equalsIgnoreCase(stationName)) {
