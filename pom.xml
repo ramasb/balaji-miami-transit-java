@@ -32,12 +32,6 @@
 			<version>9.0.6.v20130930</version>
 			<scope>compile</scope>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.sun.jersey.contribs/jersey-non-blocking-client -->
-		<dependency>
-			<groupId>com.sun.jersey.contribs</groupId>
-			<artifactId>jersey-non-blocking-client</artifactId>
-			<version>1.19.4</version>
-		</dependency>
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
